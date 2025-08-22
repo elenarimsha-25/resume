@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Рімша Олена Олександрівна</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #334155;
+            line-height: 1.5;
+            padding: 15px;
+            min-height: 100vh;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .photo-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            flex-shrink: 0;
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .header-text {
+            flex-grow: 1;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .position {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #e2e8f0;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 5px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .main-content {
+            padding: 25px 30px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+        
+        .main-column {
+            grid-column: 1;
+        }
+        
+        .side-column {
+            grid-column: 2;
+        }
+        
+        .section {
+            margin-bottom: 22px;
+        }
+        
+        h2 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3b82f6;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        h2 i {
+            color: #6366f1;
+        }
+        
+        .profile-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #475569;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #6366f1;
+        }
+        
+        .experience-item {
+            margin-bottom: 18px;
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: #1e40af;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+        
+        .company a {
+            color: #1e40af;
+            text-decoration: none;
+        }
+        
+        .company a:hover {
+            text-decoration: underline;
+        }
+        
+        .position-title {
+            font-weight: 600;
+            color: #334155;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        .period {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 6px;
+            padding-left: 18px;
+            position: relative;
+            font-size: 13px;
+            color: #475569;
+        }
+        
+        li::before {
+            content: "•";
+            color: #3b82f6;
+            font-weight: bold;
+            position: absolute;
+            left: 8px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .skill {
+            background: #e0e7ff;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3730a3;
+        }
+        
+        .language {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .level {
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .edu-title {
+            font-weight: 600;
+            color: #1e40af;
+            font-size: 14px;
+        }
+        
+        .edu-details {
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 3px;
+        }
+        
+        .additional-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            background: #f1f5f9;
+            padding: 8px 14px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+        }
+        
+        .info-item a {
+            color: #1e40af;
+            text-decoration: none;
+        }
+        
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-column, .side-column {
+                grid-column: 1;
+            }
+            
+            header {
+                padding: 20px 15px;
+            }
+            
+            .main-content {
+                padding: 20px 15px;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+        }
+        
+        .icon-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: #e0e7ff;
+            border-radius: 6px;
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header>
+            <div class="header-content">
+                <div class="photo-container">
+                    <img src="https://imgpx.com/56BloAsg3rSz.jpg" alt="Фото Рімша Олена Олександрівна"></img>
+                </div>
+                <div class="header-text">
+                    <h1>Рімша Олена Олександрівна</h1>
+                    <div class="position">Керівник відділу контенту, менеджер баз даних</div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <a href="https://t.me/earimsha"><i class="fab fa-telegram"></i> Telegram</a>
+                        </div>
+                        <div class="contact-item">
+                            <a href="https://www.linkedin.com/in/elena-rimsha-39760725/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                        <div class="contact-item">
+                            <a href="mailto:elena.rimsha@gmail.com"><i class="far fa-envelope"></i> Email</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i><a href="tel:+380931048338"> +380 (93) 104-83-38</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>  Київ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="content-grid">
+                <div class="main-column">
+                    <div class="section">
+                        <h2><div class="icon-box"><i class="fas fa-user"></i></div> Професійний профіль</h2>
+                        <p class="profile-text">Менеджер із понад 15-річним досвідом у сфері управління контентом, базами даних та віддаленими командами. Спеціалізуюсь на вдосконаленні процессів для підвищення їх ефективності, стратегічному плануванні контенту, email-маркетингу та аналізі ефективності.</p>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h2><div class="icon-box"><i class="fas fa-briefcase"></i></div> Досвід роботи</h2>
+                        
+                        <div class="experience-item">
+                            <div class="company"><a href="https://intersub.cc/uk" target="_blank">InterSub.cc</a></div>
+                            <div class="position-title">Менеджер баз даних, контент-менеджер</div>
+                            <span class="period">Квітень 2024 — дотепер</span>
+                            <ul>
+                                <li>Керування CRM: імпорт, обробка та збереження контактної бази</li>
+                                <li>Пошук та верифікація цільових контактів</li>
+                                <li>Створення та аналіз email-розсилок</li>
+				<li>Актуалізація контенту на сайті компанії</li>
+
+			   </ul>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="company"><a href="https://www.google.com/search?q=ConferenceCast&sca_esv=78b5cc96a5d77d7c&sxsrf=AE3TifMCtY_V8ijZr-kFBSOvjtpRljwXgw%3A1755792999991&ei=Z0anaN2cPNXsi-gPmfzgqA4&ved=0ahUKEwid7MDQppyPAxVV9gIHHRk-GOUQ4dUDCBA&uact=5&oq=ConferenceCast&gs_lp=Egxnd3Mtd2l6LXNlcnAiDkNvbmZlcmVuY2VDYXN0MgcQABiABBgTMgUQABjvBTIIEAAYgAQYogQyBRAAGO8FMggQABiiBBiJBUjQAlAAWABwAHgAkAEAmAGBAaABgQGqAQMwLjG4AQPIAQD4AQL4AQGYAgGgAowBmAMAkgcDMC4xoAfDArIHAzAuMbgHjAHCBwMzLTHIBwg&sclient=gws-wiz-serp" target="_blank" target="_blank">ConferenceCast</a></div>
+                            <div class="position-title">Керівник контент-відділу</div>
+                            <span class="period">Серпень 2017 — Квітень 2024</span>
+                            <ul>
+                                <li>Підбір у команду, навчання та керівництво віддаленим відділом з 12 фахівців</li>
+                                <li>Розробка та впровадження системи контент-планування</li>
+                                <li>Оптимізація процесів пошуку та інтеграції матеріалів</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="company"><a href="https://platform.dkv.global/mind-map/firms/289191/" target="_blank">IFG Lab</a></div>
+                            <div class="position-title">Операційний менеджер</div>
+                            <span class="period">Вересень 2022 — Травень 2023</span>
+                            <ul>
+                                <li>Формування цільових баз даних інвесторів</li>
+                                <li>Підбір та навчання команди асистентів</li>
+                                <li>Координація роботи 5 учасників проекту</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="company"><a href="https://getpin.com" target="_blank">AdPhone</a></div>
+                            <div class="position-title">Product Manager</div>
+                            <span class="period">Березень 2013 — Серпень 2016</span>
+                            <ul>
+                                <li>Робота з партнерами (пошук, узгодження форматів співпраці, звітність)</li>
+                                <li>Організація та оптимізація процесів модерації та розміщення оголошень</li>
+                                <li>Взаємодія з внутрішніми відділами, координація роботи відділу з 5 осіб</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="side-column">
+                    <div class="section">
+                        <h2><div class="icon-box"><i class="fas fa-graduation-cap"></i></div> Освіта</h2>
+                        <div class="education-item">
+                            <div class="edu-title">Київський економічний інститут менеджменту</div>
+                            <div class="edu-details">2009 | Менеджмент організацій</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="edu-title">Київський механіко-технологічний коледж</div>
+                            <div class="edu-details">2005 | Діловодство</div>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h2><div class="icon-box"><i class="fas fa-language"></i></div> Мови</h2>
+                            <div class="language">
+                            <span>Англійська</span>
+                            <span class="level">Базовий (A2)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h2><div class="icon-box"><i class="fas fa-star"></i></div> Навички</h2>
+                        <div class="skills-container">
+                            <span class="skill">Управління командою</span>
+                            <span class="skill">CRM-системи</span>
+                            <span class="skill">Email-маркетинг</span>
+			    <span class="skill">Аналітика</span>
+                            <span class="skill">Управління проектами</span>
+                            <span class="skill">Контент</span>
+                            <span class="skill">Підбір в команду</span>
+                            <span class="skill">Бази даних</span>
+                            <span class="skill">Партнерські відносини</span>
+                            <span class="skill">Тестування</span>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h2><div class="icon-box"><i class="fas fa-info-circle"></i></div> Додатково</h2>
+                        <div class="additional-info">
+                            <div class="info-item">
+                                <i class="fas fa-car"></i> Посвідчення водія: B
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-file-alt"></i> <a href="https://t.me/mujaji"><i class="fab fa-telegram"></i> Рекомендації</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
